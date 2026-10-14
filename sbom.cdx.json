@@ -1,0 +1,166 @@
+{
+ "bomFormat": "CycloneDX",
+ "specVersion": "1.5",
+ "serialNumber": "urn:uuid:9fe6f30c-a7fb-51a0-a213-f98aada3c55e",
+ "version": 1,
+ "metadata": {
+  "timestamp": "2026-10-06T11:24:24Z",
+  "component": {
+   "type": "application",
+   "name": "LIBCEC",
+   "version": "83b357604d34",
+   "bom-ref": "pkg:generic/anticloud/LIBCEC@83b357604d34",
+   "purl": "pkg:generic/anticloud/LIBCEC@83b357604d34",
+   "licenses": [
+    {
+     "license": {
+      "id": "GPL-2.0"
+     }
+    }
+   ]
+  },
+  "properties": [
+   {
+    "name": "anticloud:source-commit",
+    "value": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE"
+   },
+   {
+    "name": "anticloud:source-url",
+    "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+   },
+   {
+    "name": "anticloud:tier",
+    "value": "tier-agent"
+   }
+  ]
+ },
+ "components": [
+  {
+   "type": "library",
+   "name": "name",
+   "version": "libcec",
+   "purl": "pkg:cargo/name@libcec",
+   "bom-ref": "cargo/name@libcec"
+  },
+  {
+   "type": "library",
+   "name": "version",
+   "version": "8.1.7",
+   "purl": "pkg:cargo/version@8.1.7",
+   "bom-ref": "cargo/version@8.1.7"
+  },
+  {
+   "type": "library",
+   "name": "edition",
+   "version": "2021",
+   "purl": "pkg:cargo/edition@2021",
+   "bom-ref": "cargo/edition@2021"
+  },
+  {
+   "type": "library",
+   "name": "rust-version",
+   "version": "1.63",
+   "purl": "pkg:cargo/rust-version@1.63",
+   "bom-ref": "cargo/rust-version@1.63"
+  },
+  {
+   "type": "library",
+   "name": "description",
+   "version": "Rust binding for libCEC - control CEC-capable HDMI devices (TVs, AV receivers) via Pulse-Eight USB-CEC and SoC-native CEC",
+   "purl": "pkg:cargo/description@Rust binding for libCEC - control CEC-capable HDMI devices (TVs, AV receivers) via Pulse-Eight USB-CEC and SoC-native CEC",
+   "bom-ref": "cargo/description@Rust binding for libCEC - control CEC-capable HDMI devices (TVs, AV receivers) via Pulse-Eight USB-CEC and SoC-native CEC"
+  },
+  {
+   "type": "library",
+   "name": "homepage",
+   "version": "https://github.com/Pulse-Eight/libcec",
+   "purl": "pkg:cargo/homepage@https://github.com/Pulse-Eight/libcec",
+   "bom-ref": "cargo/homepage@https://github.com/Pulse-Eight/libcec"
+  },
+  {
+   "type": "library",
+   "name": "repository",
+   "version": "https://github.com/Pulse-Eight/libcec",
+   "purl": "pkg:cargo/repository@https://github.com/Pulse-Eight/libcec",
+   "bom-ref": "cargo/repository@https://github.com/Pulse-Eight/libcec"
+  },
+  {
+   "type": "library",
+   "name": "documentation",
+   "version": "https://pulse-eight.github.io/libcec/rust/",
+   "purl": "pkg:cargo/documentation@https://pulse-eight.github.io/libcec/rust/",
+   "bom-ref": "cargo/documentation@https://pulse-eight.github.io/libcec/rust/"
+  },
+  {
+   "type": "library",
+   "name": "readme",
+   "version": "README.md",
+   "purl": "pkg:cargo/readme@README.md",
+   "bom-ref": "cargo/readme@README.md"
+  },
+  {
+   "type": "library",
+   "name": "license",
+   "version": "GPL-2.0-or-later",
+   "purl": "pkg:cargo/license@GPL-2.0-or-later",
+   "bom-ref": "cargo/license@GPL-2.0-or-later"
+  },
+  {
+   "type": "library",
+   "name": "links",
+   "version": "cec",
+   "purl": "pkg:cargo/links@cec",
+   "bom-ref": "cargo/links@cec"
+  },
+  {
+   "type": "library",
+   "name": "Python2",
+   "version": "unspecified",
+   "purl": "pkg:generic/Python2",
+   "bom-ref": "native/Python2@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "Python3",
+   "version": "unspecified",
+   "purl": "pkg:generic/Python3",
+   "bom-ref": "native/Python3@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "node-addon-api",
+   "version": "^8.0.0",
+   "purl": "pkg:npm/node-addon-api@^8.0.0",
+   "bom-ref": "npm/node-addon-api@^8.0.0"
+  },
+  {
+   "type": "library",
+   "name": "node-gyp",
+   "version": "^12.0.0",
+   "purl": "pkg:npm/node-gyp@^12.0.0",
+   "bom-ref": "npm/node-gyp@^12.0.0"
+  },
+  {
+   "type": "library",
+   "name": "Threads",
+   "version": "unspecified",
+   "purl": "pkg:generic/Threads",
+   "bom-ref": "native/Threads@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "libcec",
+   "version": "unspecified",
+   "purl": "pkg:generic/libcec",
+   "bom-ref": "native/libcec@unspecified"
+  }
+ ],
+ "source": {
+  "git": {
+   "head": null,
+   "url": null,
+   "sha_unverified": true,
+   "note": "contamination removed; resolve via GitHub API before quoting"
+  }
+ }
+}

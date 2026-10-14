@@ -1,0 +1,10 @@
+{
+  "project": "LIBCEC",
+  "category": "CONSUMER_ELECTRONICS",
+  "path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CONSUMER_ELECTRONICS\\LIBCEC",
+  "status": "failed",
+  "reason": "no 40-hex git HEAD SHA (head='REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE'; sanitized clone or .git absent)",
+  "files_count": 286,
+  "lines_of_code": 54410,
+  "sha": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE"
+}
