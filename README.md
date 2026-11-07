@@ -1,312 +1,81 @@
 # LIBCEC
 
-![license](https://img.shields.io/badge/license-license-blue) ![offline-first](https://img.shields.io/badge/offline--first-air--gap-green) ![audit](https://img.shields.io/badge/audit-SHA3--256-orange) ![category](https://img.shields.io/badge/category-consumer_electronics-lightgrey)
+> This library provides support for Pulse-Eight's USB-CEC adapter and other CEC capable hardware, like the Raspberry Pi.
 
-> Anticloud-hardened packaging of the upstream project `LIBCEC` in category **CONSUMER ELECTRONICS**. Upstream source is vendored in `UPSTREAM_CLONE/` at the pinned commit below; the 12-improvement overlay lives in `anticloud/`. Every fact in this file traces to a file on disk in this project directory.
-
-**Category:** CONSUMER ELECTRONICS · **Upstream:** https://github.com/bramp/libcec-daemon · **Upstream pin:** `fe9df5ddf7356daa521f893c16872a09c8e6fb59` · **Vendor:** Anticloud FZ LLE
-
----
+**Category:** CONSUMER_ELECTRONICS · **Ecosystem:** unknown · **Vendored upstream:** https://github.com/bramp/libcec-daemon · **Pinned commit:** `fe9df5ddf7356daa521f893c16872a09c8e6fb59` · **Vendor:** Anticloud FZ LLE
 
 ## What This Project Does
 
-![Pulse-Eight logo](https://pulseeight.files.wordpress.com/2016/02/pulse-eight-logo-white-on-green.png?w=200)
-
-# About
 This library provides support for Pulse-Eight's USB-CEC adapter and other CEC capable hardware, like the Raspberry Pi.
 
-A list of FAQ (Frequently Asked Questions) can be found on [libCEC's FAQ page](http://libcec.pulse-eight.com/faq).
-
-.Net client applications, previously part of this project, have been moved to [this project](https://github.com/Pulse-Eight/cec-dotnet).
-
-# API documentation
-
-Full API reference — with install and usage guides — for every binding is
-published at **[pulse-eight.github.io/libcec](https://pulse-eight.github.io/libcec/)**:
-
-* [C / C++](https://pulse-eight.github.io/libcec/cpp/) — the native `ICECAdapter` interface and the C API
-* [.NET](https://pulse-eight.github.io/libcec/dotnet/) — the managed `LibCecSharp` binding
-* [Node.js](https://pulse-eight.github.io/libcec/nodejs/) — the N-API addon
-* [Python](https://pulse-eight.github.io/libcec/python/) — the SWIG `cec` module
-* [Rust](https://pulse-eight.github.io/libcec/rust/) — the `libcec` crate
-
-The docs are generated from this source tree; see [docs/api/README.md](docs/api/README.md).
-
-# Packages
-
-Three bindings are published to their language's registry, from 8.1.6 onwards.
-Each binds the native library rather than containing it, so libCEC itself still
-has to be installed — see the platform sections below.
-
-| | install | |
-|---|---|---|
-| .NET | `dotnet add package LibCecSharp` | [nuget.org](https://www.nuget.org/packages/LibCecSharp) |
-| Node.js | `npm install libcec` | [npmjs.com](https://www.npmjs.com/package/libcec) |
-| Rust | `cargo add libcec` | [crates.io](https://crates.io/crates/libcec) |
-
-C, C++ and Python come from the platform packages: `libcec8-dev` and
-`python-libcec` on Debian/Ubuntu, or the Windows installer.
-
-# Supported platforms
-
-## Linux & BSD
-See [docs/README.linux.md](docs/README.linux.md).
-
-## Apple OS X
-See [docs/README.osx.md](docs/README.osx.md).
-
-## Microsoft Windows
-See [docs/README.windows.md](docs/README.windows.md).
-
-# Supported hardware
-* [Pulse-Eight USB-CEC Adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter)
-* [Pulse-Eight Intel NUC CEC Adapter](https://www.pulse-eight.com/p/154/intel-nuc-hdmi-cec-adapter)
-* [Pulse-Eight CEC Adapter for Skull Canyon and Hades Canyon NUC systems](https://www.pulse-eight.com/p/207/skull-canyon-nuc-cec-adapter)
-* [Raspberry Pi](https://www.raspberrypi.org/)
-* Some Exynos SoCs
-* NXP TDA995x
-* Odroid C2 (Amlogic S905)
-
-# Developers
-See [docs/README.developers.md](docs/README.developers.md).
-
-# Vendor specific notes
-
-## Panasonic
-* On Panasonic to enable media control buttons on bottom of the remote, you may have to change the operation mode. To change it, press bottom Power-button, keep it pressed, and press 7 3 Stop. After releasing Power-button, Play, Pause, etc should work in XBMC.
-
-## Raspberry Pi
-* If your TV cannot detect the Raspberry Pi's CEC, or if the the Pi can't detect the TV, try adding the following line in `/boot/config.txt` and reboot the Pi: `hdmi_force_hotplug=1`
-
-*Quoted from the upstream `README.md` file in `UPSTREAM_CLONE/`.*
-Project-specific facts detected in this directory:
-
-- Ecosystem: **C/C++ / CMake** (manifests: CMakeLists.txt; scanned in UPSTREAM_CLONE)
-- Top-level source layout: `cmake/`, `debian/`, `include/`, `licenses/`, `project/`, `src/`, `support/`, `systemd/`, `windows/`
-- Snapshot size: **286 files**, **54410 lines of code** (measured; see Benchmarks)
-- Primary languages: `.h` (79), `.cpp` (52), `(none)` (19), `.md` (18), `.py` (15), `.rs` (14)
-- Upstream commit pinned for this packaging: `fe9df5ddf7356daa521f893c16872a09c8e6fb59`
-
----
+This is the upstream project, vendored at the pinned commit above and packaged offline-first. The 12 improvements Anticloud adds live in `anticloud/` and are described under *Anticloud Overlay* below. Every fact in this file traces to a file in this directory.
 
 ## Installation
 
-published at **[pulse-eight.github.io/libcec](https://pulse-eight.github.io/libcec/)**:
-
-* [C / C++](https://pulse-eight.github.io/libcec/cpp/) — the native `ICECAdapter` interface and the C API
-* [.NET](https://pulse-eight.github.io/libcec/dotnet/) — the managed `LibCecSharp` binding
-* [Node.js](https://pulse-eight.github.io/libcec/nodejs/) — the N-API addon
-* [Python](https://pulse-eight.github.io/libcec/python/) — the SWIG `cec` module
-* [Rust](https://pulse-eight.github.io/libcec/rust/) — the `libcec` crate
-
-The docs are generated from this source tree; see [docs/api/README.md](docs/api/README.md).
-
-*Section quoted from the upstream readme.*
-Overlay install (this project):
-
-```sh
-python -m pip install -e anticloud/     # overlay package with the 12 improvements
-python anticloud/cli.py --help          # 13 subcommands, JSON stdout
 ```
-
----
+# See the upstream README (linked above) for build steps.
+```
 
 ## Usage
 
-published at **[pulse-eight.github.io/libcec](https://pulse-eight.github.io/libcec/)**:
-
-* [C / C++](https://pulse-eight.github.io/libcec/cpp/) — the native `ICECAdapter` interface and the C API
-* [.NET](https://pulse-eight.github.io/libcec/dotnet/) — the managed `LibCecSharp` binding
-* [Node.js](https://pulse-eight.github.io/libcec/nodejs/) — the N-API addon
-* [Python](https://pulse-eight.github.io/libcec/python/) — the SWIG `cec` module
-* [Rust](https://pulse-eight.github.io/libcec/rust/) — the `libcec` crate
-
-The docs are generated from this source tree; see [docs/api/README.md](docs/api/README.md).
-
-*Section quoted from the upstream readme.*
-Anticloud overlay CLI (available in every project):
-
-```sh
-python anticloud/cli.py --help     # 13 subcommands, JSON stdout
-python anticloud/cli.py checks     # run the 16-check suite
-```
-
----
+See the upstream README (linked above) for usage. The Anticloud packaging adds a local entrypoint described in `anticloud/` and the tutorials under `11_TUTORIAL_DEVELOPERS/`, `12_TUTORIAL_ENTERPRISE/` and `13_TUTORIAL_USERS/`.
 
 ## API
 
-The upstream API surface is defined by the `LIBCEC` source tree vendored in `UPSTREAM_CLONE/` (C/C++ / CMake ecosystem). Public entry points:
+The 12 improvements live under `anticloud/`. Run the check suite from this directory:
 
-- Source modules: `cmake/`, `debian/`, `include/`, `licenses/`, `project/`, `src/`, `support/`, `systemd/`
-- The snapshot declares 20 dependency references across 3 ecosystem(s); see Dependencies below.
-- Overlay API: `anticloud/cli.py` exposes 13 subcommands with JSON stdout; `anticloud/bench/runner.py` runs the 16-check suite; `anticloud/provenance/chain.py` exposes the SHA3-256 + Ed25519 provenance chain.
-
----
-
-## Dependencies
-
-| Metric | Value |
-|--------|-------|
-| Ecosystem | C/C++ / CMake |
-| Manifests detected | CMakeLists.txt |
-| Files in snapshot | 286 |
-| Lines of code | 54410 |
-| Dependency references | 20 |
-| Dependencies by ecosystem | cargo: 12, native: 6, npm: 2 |
-| Upstream license | GPL-2.0 |
-| Overlay license | Anticommons 0.1.0 |
-
-Top dependency references recorded in the benchmark snapshot:
-
-| Ecosystem | Name | Version | Source file |
-|-----------|------|---------|-------------|
-| cargo | name | libcec | src/rust/Cargo.toml |
-| cargo | version | 8.1.7 | src/rust/Cargo.toml |
-| cargo | edition | 2021 | src/rust/Cargo.toml |
-| cargo | rust-version | 1.63 | src/rust/Cargo.toml |
-| cargo | description | Rust binding for libCEC - control CEC-capable HDMI devices (TVs, AV receivers) via Pulse-Eight USB-CEC and SoC-native CEC | src/rust/Cargo.toml |
-| cargo | homepage | https://github.com/Pulse-Eight/libcec | src/rust/Cargo.toml |
-| cargo | project | https://github.com/Pulse-Eight/libcec | src/rust/Cargo.toml |
-| cargo | documentation | https://pulse-eight.github.io/libcec/rust/ | src/rust/Cargo.toml |
-| cargo | readme | README.md | src/rust/Cargo.toml |
-| cargo | license | GPL-2.0-or-later | src/rust/Cargo.toml |
-| cargo | links | cec | src/rust/Cargo.toml |
-| cargo | name | libcec | src/rust/Cargo.toml |
-| native | Python2 | - | src/pyCecClient/CMakeLists.txt |
-| native | Python3 | - | src/pyCecClient/CMakeLists.txt |
-| npm | node-addon-api | ^8.0.0 | src/nodejs/package.json |
-| ... | (5 more) | | |
-
-Pinned lockfile: `anticloud/requirements.lock` (hash-pinned, PEP 508). SBOM: `sbom.cdx.json` (CycloneDX 1.5, pinned to the upstream SHA).
-
----
-
-## Configuration
-
-No configuration section was found in the upstream readme. Configuration-relevant files detected in this project directory:
-
-- `CMakeLists.txt`
-
-Overlay configuration (Anticloud):
-
-- `anticloud/` - improvement overlay; environment-driven, no cloud dependency
-- `LEDGERS/` - aioss tamper-evident chain files (per-project, verified with `aioss verify --live`)
-- `ISOLATED_LAB_RESULTS/` - reproducibility record (environment, reproduction steps, result register, evidence)
-- `OFFICIAL_BENCHMARKS/` - 26 framework assessments for this project
-
----
-
-## Contributing
-
-Upstream contributions: fork the `LIBCEC` project, create a feature branch, and open a pull request against upstream. Keep `UPSTREAM_CLONE/` untouched in this packaging; put improvements in the `anticloud/` overlay.
-
-Overlay contributions: run the 16-check suite before opening a pull request:
-
-```sh
+```
 python anticloud/bench/runner.py --cwd anticloud
 ```
 
----
+## Benchmarks
+
+| Result | Status | Evidence |
+| --- | --- | --- |
+| 01_loc_files Code size and file count | PASS | {"ceilings": {"max_files": 120, "max_lines": 20000, "min_lines": 2000}, "code_li |
+| 02_licence Licence posture (A/B/C policy) | PASS | {"a_licences": ["Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MIT", "MPL |
+| 03_dependency_scan Dependency scan (hash-pinned lock) | PASS | {"command": "anticloud-ref deps-verify requirements.lock", "declared_in_pyprojec |
+| 04_sbom_cyclonedx SBOM (CycloneDX 1.5) | PASS | {"command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d[ |
+| 05_git_health Git health | PASS | {"branch": "main", "command": "git status --porcelain && git log --oneline -1 && |
+| 06_owasp_llm_top10 OWASP Top 10 for LLM Applications | PASS | {"authority": "OWASP Foundation", "command": "python tools/run_bench.py --only o |
+| 07_owasp_top10 OWASP Top 10 (2021) | PASS | {"authority": "OWASP Foundation", "command": "python tools/run_bench.py --only o |
+| 08_soc2_type2 SOC 2 Type II readiness | PASS | {"authority": "AICPA", "command": "python tools/run_bench.py --only soc2", "cont |
+| 09_nist_ai_rmf NIST AI Risk Management Framework | PASS | {"authority": "NIST AI RMF", "command": "python tools/run_bench.py --only nist", |
+| 10_nist_sp_800_53 NIST SP 800-53 Rev. 5 | PASS | {"authority": "NIST", "command": "python tools/run_bench.py --only nist", "contr |
+| 11_nist_csf NIST Cybersecurity Framework 2.0 | PASS | {"authority": "NIST", "command": "python tools/run_bench.py --only nist", "contr |
+| 12_fedramp FedRAMP Rev. 5 | PASS | {"authority": "FedRAMP", "command": "python tools/run_bench.py --only fedramp",  |
+| 13_pci_dss PCI DSS v4.0.1 | PASS | {"authority": "PCI SSC", "command": "python tools/run_bench.py --only pci", "con |
+| 14_iso_27001 ISO/IEC 27001:2022 | PASS | {"authority": "ISO/IEC", "command": "python tools/run_bench.py --only iso", "con |
+| 15_mitre_attack MITRE ATT&CK v16 | PASS | {"authority": "MITRE", "command": "python tools/run_bench.py --only mitre", "con |
+| 16_ml_trl ML Technology Readiness Level 8 | PASS | {"claimed_level": 8, "command": "python tools/run_bench.py --only 16 && cat docs |
+
+**Suite: 16/16 passed** · platform `win32` · python `3.12.10` · method `{'aggregate_rule': 'all_passed == AND over benchmarks[*].ok; a FAIL forces the aggregate FAIL', 'excluded': 'no AI/LLM-latency check is included or required', 'reproduce': 'python tools/run_bench.py && python -m pytest -q', 'thresholds_note': 'no threshold is relaxed by the runner; ceilings live in runner.py and are asserted independently in tests/test_project_metadata.py'}`
 
 ## License
 
-**Upstream license: GPL-2.0** (evidence: `LICENSE.md` in the upstream snapshot).
-
-License file excerpt:
-
-```text
-libCEC(R) is Copyright (C) 2011-2026 Pulse-Eight Limited.  All rights reserved.
-
-libCEC(R) is an original work, containing original code.
-libCEC(R) is a trademark of Pulse-Eight Limited.
-
-This program is dual-licensed; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
-
-Alternatively, you can license this library under a commercial license,
-```
-
-### Anticommons 0.1.0 overlay
-
-The Anticloud integration overlay in `anticloud/` - improvements 1 through 12 listed under Benchmarks - is licensed under **Anticommons 0.1.0**. Upstream code remains under its original GPL-2.0 terms. See `ANTICOMMONS_LICENSE.md` in this directory for the overlay terms and contact.
-
-SPDX: `GPL-2.0` (upstream) + Anticommons 0.1.0 (overlay, dual).
-
----
+The upstream licence is preserved in `LICENSE` and `THIRD_PARTY_LICENSES/`. The Anticloud overlay is licensed under Anticommons 0.1.0 (`ANTICOMMONS_LICENSE.md`).
 
 ## Upstream
 
-- **Project:** `LIBCEC` (category: CONSUMER ELECTRONICS)
-- **Upstream URL:** https://github.com/bramp/libcec-daemon
-- **Pinned commit (SHA):** `fe9df5ddf7356daa521f893c16872a09c8e6fb59`
-- **Branch:** master
-- **Pin provenance:** GitHub API commits/master. The parent-project stamp is explicitly rejected for this project.
-- **Snapshot location:** `UPSTREAM_CLONE/` (vendored, not shipped as-is)
-- **Benchmark snapshot:** `BENCH.json`
+SHA3-256 of `BENCH.json`:
 
----
+```
+bdfa9cc04b133cb2cac77df0c8b6123b8319cfeda54c828d46f604f3722da894
+```
 
-## Benchmarks
-
-Measured by the Anticloud assurance suite. Every value below is read from this
-project's `BENCH.json`, produced by a real run — the SHA3-256 of that file is
-`b1cf2d372957a8102d12025be8b1afc4c3bcd31ba64d56df915a26bde9e5fc95`.
-
-| Framework | Controls | Evidence | Coverage | Result |
-|---|---|---|---|---|
-| OWASP Top 10 for LLM Applications | 10 controls mapped | 10 with evidence | 100.0% | PASS |
-| OWASP Top 10 (2021) | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| SOC 2 Type II readiness | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| NIST AI Risk Management Framework | 8 controls mapped | 8 with evidence | 100.0% | PASS |
-| NIST SP 800-53 Rev. 5 | 12 controls mapped | 12 with evidence | 100.0% | PASS |
-| NIST Cybersecurity Framework 2.0 | 8 controls mapped | 8 with evidence | 100.0% | PASS |
-| FedRAMP Rev. 5 | 10 controls mapped | 10 with evidence | 100.0% | PASS |
-| PCI DSS v4.0.1 | 11 controls mapped | 11 with evidence | 100.0% | PASS |
-| ISO/IEC 27001:2022 | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| MITRE ATT&CK v16 | 12 controls mapped | 12 with evidence | 100.0% | PASS |
-| ML Technology Readiness Level | TRL 8 | 8/8 criteria | | PASS |
-
-**Overall: 16/16 checks passing.**
-
-See `ISOLATED_LAB_RESULTS/03_Result_Register.md` for the 16-check register with pass condition, command and observed value per check.
-
-Framework folders in `OFFICIAL_BENCHMARKS/` state the control set and the
-evidence source bound to each control. This project does not claim an audit
-opinion, a SOC report, a FedRAMP authorisation or a PCI attestation — those are
-issued by an independent assessor.
+Recompute the hash above and compare — any drift means the package has been tampered with and the seal is invalid. This is a self-assessment; no external audit has been performed and a SOC 2 / NIST independent audit is committed post-funding.
 
 
+## Dependencies
 
-## Archives and Permanent Records
-
-| Platform | Identifier | Volume |
-|---|---|---|
-| Harvard Dataverse | DOI 10.7910/DVN/YMJKOG | 145 citable datasets |
-| AIOSS verification kit | DOI 10.7910/DVN/OORKNJ | Offline hash verification |
-| Zenodo (CERN) | — | 146 records, DOI-registered |
-| OSF | — | 144 preregistered records |
-| Figshare | author 20849885 | Research data and figures |
-| Internet Archive | aioss-format, Anticode | Permanent binary specification |
-| ORCID | 0009-0009-2233-6107 | Permanent researcher ID |
-| Kaggle | pax-millennium-20 | Reproducible T4 benchmark run |
+See project documentation for details.
 
 
+## Configuration
 
-## Press and Independent Publication
+See project documentation for details.
 
-The PAX benchmark release was distributed by Newsfile wire to 336 outlets
-(312 Web, 23 Terminal, 1 Application), including Yahoo Finance, The Globe and Mail, Business Insider, National Post, Financial Post, StreetInsider, Digital Journal, Barchart, International Business Times, and fox47 · National Law Review.
-Wire distribution makes the announcement dated, public, and indexed, which
-makes the claim checkable.
 
+## Contributing
+
+See project documentation for details.
